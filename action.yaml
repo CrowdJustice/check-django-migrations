@@ -1,0 +1,8 @@
+name: 'Check Django Migrations'
+description: 'Checks for missing Django migrations and migration merge conflicts'
+outputs:
+  complete:
+    description: 'complete'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
