@@ -6,6 +6,9 @@ runs:
     - run: pip install -r requirements.txt
       name: Install reqs
       shell: bash
+    - run: ls
+      name: test
+      shell: bash
     - run: python manage.py migrate --check
       name: Check migrations
       shell: bash
