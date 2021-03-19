@@ -1,8 +1,12 @@
 name: 'Check Django Migrations'
 description: 'Checks for missing Django migrations and migration merge conflicts'
-outputs:
-  complete:
-    description: 'complete'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "composite"
+  steps:
+    - run: pip install -r requirements.txt
+      name: Install reqs
+      shell: bash
+    - run: python manage.py migrate --check
+      name: Check migrations
+      shell: bash
+
